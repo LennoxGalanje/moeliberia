@@ -518,7 +518,7 @@ a:any-link {
 }
 .news-card{
   position: relative;
-  height: auto;
+  height: 265px;
   width: 100%;
   box-shadow: 0 1.84px 1.84px rgba(0, 0, 0, 0.1);
   margin-top: 40px;
@@ -1139,6 +1139,7 @@ color: var(--Secondary-color);
   font: 3.125rem/120% var(--FF);
 }
 .news-card{
+  height:500px;
   width: 100%;
 }
 .news-card__title{
