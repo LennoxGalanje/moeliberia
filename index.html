@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MOE</title>
+    <meta name="author" content="Lennox Galanje" />
+    <meta
+      name="description"
+      content="This is a website audit for the Ministry of Education"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="logos/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/ddc3ccf995.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <!--|| HEADER-SECTION || -->
+      <section class="moe-header">
+        <!-- NAV-BAR -->
+        <div class="moe-nav">
+          <img src="logos/logo.png" alt="" />
+          <h1 class="logo-text">Ministry Of Education</h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Partners</a></li>
+            <li><a href="#">Scholarships</a></li>
+            <li><a href="#">News & Updates</a></li>
+          </ul>
+          <i class="fa-solid fa-bars"></i>
+          <div class="btn-cu">
+            <a href="#" class="contactus">Contact</a>
+          </div>
+        </div>
+
+        <!-- HEADER-HERO -->
+        <div class="moe-hero">
+          <div class="moe-corousel">
+            <div class="divisor"></div>
+            <div class="text-content">
+              <h1 class="text-content__title">Quality Education For All</h1>
+              <p class="text-content__subtext">
+                We believe that the 21st century Liberia education will prepare
+                its people to become productive contributors to national
+                building through workforce development
+              </p>
+              <div class="read-more-btn">
+                <a href="#">
+                  Read More
+                  <span>
+                    <i class="fa-regular fa-circle-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="corousel-indicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="separator"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="separator"></span>
+            <span class="indicator" data-index="2"></span>
+          </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const indicators = document.querySelectorAll(".indicator");
+
+              function rotateIndicator() {
+                const currentActive =
+                  document.querySelector(".indicator.active");
+                let nextIndex = 0;
+
+                if (currentActive) {
+                  const currentIndex = parseInt(currentActive.dataset.index);
+                  nextIndex =
+                    (currentIndex + 1) %
+                    document.querySelectorAll(".indicator:not(.separator)")
+                      .length;
+                  currentActive.classList.remove("active");
+                }
+
+                document
+                  .querySelector(`.indicator[data-index="${nextIndex}"]`)
+                  .classList.add("active");
+              }
+
+              indicators[0].classList.add("active");
+              setInterval(rotateIndicator, 12000);
+
+              indicators.forEach((indicator) => {
+                indicator.addEventListener("click", function () {
+                  if (this.classList.contains("separator")) return;
+
+                  document
+                    .querySelector(".indicator.active")
+                    .classList.remove("active");
+                  this.classList.add("active");
+                });
+              });
+            });
+          </script>
+        </div>
+      </section>
+
+      <!--|| MAIN-SECTION || -->
+      <section class="moe-main">
+        <!-- || CARD-SECTION || -->
+        <div class="moe-main__cards">
+          <div class="moe-card">
+            <div class="card-content">
+              <div class="card-content__header">
+                <i class="fa-solid fa-folder-open"></i>
+                <h3 class="card-content__title">Education ACT of 2021</h3>
+              </div>
+              <p class="card-content__subtext">
+                An ACT to repeal an ACT to adopt the Education T-AW of A.D.2001,
+                approved January 8, 2AA7 and all I-AWS Amendatory thereto, amend
+                certain provisions
+              </p>
+              <div class="get-access-btn">
+                <a href="#">
+                  Get Access
+                  <span class="access"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="moe-card">
+            <div class="card-content">
+              <div class="card-content__header">
+                <i class="fa-solid fa-folder-open"></i>
+                <h3 class="card-content__title">
+                  Education Sector Plan 2022/23–2026/27
+                </h3>
+              </div>
+              <p class="card-content__subtext">
+                The Ministry of Education (MoE) has developed a four-year
+                education sector plan (ESP) to address the most urgent
+                challenges
+              </p>
+              <div class="get-access-btn">
+                <a href="#">
+                  Get Access
+                  <span class="access"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="moe-card">
+            <div class="card-content">
+              <div class="card-content__header">
+                <i class="fa-solid fa-folder-open"></i>
+                <h3 class="card-content__title">National Curriculum</h3>
+              </div>
+              <p class="card-content__subtext">
+                The Ministry of Education now publishes the Draft Revised
+                National Curriculum and solicit inputs from stakeholders and
+                education partners.
+              </p>
+              <div class="get-access-btn">
+                <a href="#">
+                  Get Access
+                  <span class="access"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- || ABOUT-SECTION || -->
+        <div class="moe-main__about-us">
+          <div class="about-us">
+            <i class="fa-solid fa-tv"></i>
+            <h3 class="about-title">About the Ministry</h3>
+          </div>
+          <div class="about-us__cards">
+            <div class="about-us__card-content">
+              <div class="about-us__card-header">
+                <h3 class="about-us__card-title">Mission Statement</h3>
+              </div>
+              <p class="about-us__card-subtext">
+                The mission of the Ministry of Education is to provide quality
+                education for all and prepare future leaders who are capable of
+                handling the task of nation building. <br /><br />
+                Protecting our national heritage and enhancing the
+                socio-economic growth and development for the sustenance of the
+                Liberian state.
+              </p>
+              <div class="about-us__card-btn">
+                <a href="#">
+                  Read More
+                  <span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div class="Philosophy-card">
+              <div class="philosophy-card__content">
+                <div class="philosophy-card__header">
+                  <h3 class="philosophy-card__title">
+                    Philosophy of the Education System of Liberia
+                  </h3>
+                </div>
+                <ul class="philosophy-card__subtext">
+                  <li>
+                    <p>
+                      We believe that the 21st century Liberian Education System
+                      will provide equal access to quality education for all
+                      residents, regardless of race, ethnicity, color, creed,
+                      gender, special needs, religious, or political
+                      affiliation.
+                    </p>
+                  </li>
+                  <br />
+                  <li>
+                    <p>
+                      We believe that the foundation of this educational system
+                      is based on the following Core (central) values;
+                      Accountability and Commitment to duty, Commitment to
+                      Excellence of Performance, Transparency, Diligence, and
+                      Moral rectitude.
+                    </p>
+                  </li>
+                  <br />
+                  <li>
+                    <p>
+                      We believe that the 21st century Liberian Education will
+                      subscribe to the Liberian Constitution and the Universal
+                      Declaration of Human Rights which considers education as a
+                      fundamental human right.
+                    </p>
+                  </li>
+                  <br />
+                  <li>
+                    <p>
+                      We believe that the 21st century Liberia Education will
+                      promote the health and well-being of its people to be
+                      technologically literate and life-long learners.
+                    </p>
+                  </li>
+                  <br />
+                  <li>
+                    <p>
+                      We believe that the 21st century Liberia Education will
+                      provide a caring, nurturing, safe, and secured learning
+                      environment.
+                    </p>
+                  </li>
+                  <br />
+                  <li>
+                    <p>
+                      We believe that the 21st century Liberia Education will
+                      prepare its people to become productive contributors to
+                      nation building through workforce development.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--NEWS-SECTION -->
+        <div class="moe-main__news">
+          <div class="section-news__title">
+            <i class="fa-solid fa-tv"></i>
+            <h3 class="section-news__header">Latest News</h3>
+          </div>
+          <div class="news-cards">
+            <div class="news-card">
+              <div class="news-card__indicators">
+                <i class="fa-solid fa-caret-left"></i>
+              </div>
+              <div class="news-card__content">
+                <figure>
+                  <img
+                    src="images/image3.jpeg"
+                    alt="news-image"
+                    height="950"
+                    width="550"
+                    loading="lazy"
+                  />
+                  <figcaption class="offscreen">news-image</figcaption>
+                </figure>
+                <div class="news-card__description">
+                  <h3 class="news-card__title">
+                    The Ministry of Education invites all interested individuals
+                    to participate in an exclusive online webinar Careers..
+                  </h3>
+                  <p class="news-card__subtext">
+                    The Ministry of Education invites all interested individuals
+                    to participate in an exclusive online webinar Careers in
+                    Education.
+                  </p>
+                  <div class="news-card__footer">
+                    <figure>
+                      <a href="#" class="cta-btn"
+                        >Read More
+                        <span class="news"
+                          ><i class="fa-solid fa-caret-down"></i></span
+                      ></a>
+                      <figcaption class="offscreen">cta-btn</figcaption>
+                    </figure>
+                    <h3 class="date">APR 14, 2025</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-card">
+              <div class="news-card__indicators">
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <div class="news-card__content">
+                <figure>
+                  <img
+                    src="images/eye-img.jpg"
+                    alt="news-image"
+                    height="950"
+                    width="550"
+                    loading="lazy"
+                  />
+                  <figcaption class="offscreen">news-image</figcaption>
+                </figure>
+                <div class="news-card__description">
+                  <h3 class="news-card__title">
+                    Liberia's Ministry of Education and EYElliance Strengthen
+                    School Eye Health Program
+                  </h3>
+                  <p class="news-card__subtext">
+                    The Ministry of Education, in partnership with EYElliance,
+                    has reaffirmed its commitment to the long-term integration
+                    and sustainability of the School Eye Health Program as a
+                    national priority.
+                  </p>
+                  <div class="news-card__footer">
+                    <figure>
+                      <a href="#" class="cta-btn"
+                        >Read More
+                        <span class="news"
+                          ><i class="fa-solid fa-caret-down"></i></span
+                      ></a>
+                      <figcaption class="offscreen">cta-btn</figcaption>
+                    </figure>
+                    <h3 class="date">APR 14, 2025</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="news-card">
+              <div class="news-card__indicators">
+                <i class="fa-solid fa-caret-right"></i>
+              </div>
+              <div class="news-card__content">
+                <figure>
+                  <img
+                    src="images/image1.jpg"
+                    alt="news-image"
+                    height="950"
+                    width="550"
+                    loading="lazy"
+                  />
+                  <figcaption class="offscreen">news-image</figcaption>
+                </figure>
+                <div class="news-card__description">
+                  <h3 class="news-card__title">
+                    Liberia's Ministry of Education and UNESCO Expand Global
+                    Career Prospects for Liberian Students
+                  </h3>
+                  <p class="news-card__subtext">
+                    The Ministry of Education, in collaboration with the United
+                    Nations Educational, Scientific and Cultural Organization
+                    (UNESCO), successfully hosted a groundbreaking webinar,
+                    "Careers for Liberian Students"
+                  </p>
+                  <div class="news-card__footer">
+                    <figure>
+                      <a href="#" class="cta-btn"
+                        >Read More
+                        <span class="news"
+                          ><i class="fa-solid fa-caret-down"></i></span
+                      ></a>
+                      <figcaption class="offscreen">cta-btn</figcaption>
+                    </figure>
+                    <h3 class="date">APR 14, 2025</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--RECENT-PROJECTS -->
+        <div class="moe-main__projects">
+          <div class="section-projects__title">
+            <i class="fa-solid fa-tv"></i>
+            <h3 class="section-projects__header">Recent Projects</h3>
+          </div>
+
+          <div class="project-embeed">
+            <video
+              src="images/project_embeed.mp4"
+              height="auto"
+              width="100%"
+              controls
+            ></video>
+          </div>
+
+          <!--Cards-->
+          <div class="project-cards">
+            <div class="project-card">
+              <div class="project-card__content">
+                <figure>
+                  <img
+                    src="images/project01.jpg"
+                    width="342"
+                    height="327"
+                    loading="lazy"
+                    alt="image-01"
+                  />
+                  <figcaption class="offscreen">image-01</figcaption>
+                </figure>
+                <h3 class="project-card__title">
+                  Final-COVID-19-Education Response Plan Budget 19_5_20
+                </h3>
+              </div>
+              <div class="cta-read-more">
+                <a href="#" class="btn-read-more"
+                  ><span>Read More</span><i class="fa-solid fa-caret-down"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__content">
+                <figure>
+                  <img
+                    src="images/project02.jpg"
+                    width="342"
+                    height="327"
+                    loading="lazy"
+                    alt="image-02"
+                  />
+                  <figcaption class="offscreen">image-02</figcaption>
+                </figure>
+                <h3 class="project-card__title">
+                  ESFGUS20-P172705-120877-Liberia Learning Foundation Project-
+                  P172705-RPF
+                </h3>
+              </div>
+              <div class="cta-read-more">
+                <a href="#" class="btn-read-more"
+                  ><span>Read More</span><i class="fa-solid fa-caret-down"></i
+                ></a>
+              </div>
+            </div>
+
+            <div class="project-card">
+              <div class="project-card__content">
+                <figure>
+                  <img
+                    src="images/project03.jpg"
+                    width="342"
+                    height="327"
+                    loading="lazy"
+                    alt="image-01"
+                  />
+                  <figcaption class="offscreen">image-01</figcaption>
+                </figure>
+                <h3 class="project-card__title">
+                  Liberia Education Emergency Response Plan
+                </h3>
+              </div>
+              <div class="cta-read-more">
+                <a href="#" class="btn-read-more"
+                  ><span>Read More</span><i class="fa-solid fa-caret-down"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--PARTNERS -->
+      <section class="our-partners">
+        <div class="partners">
+          <div class="section-partners__title">
+            <i class="fa-solid fa-tv"></i>
+            <h3 class="section-partners__header">Our Partners</h3>
+          </div>
+
+          <div class="partners-corousel">
+            <figure>
+              <img
+                src="images/USAID.png"
+                height="139"
+                width="243"
+                alt="USAID"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">USAID</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/kids_edu.png"
+                height="143"
+                width="259"
+                alt="UNICEF"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">UNICEF</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/Umovement.png"
+                height="143"
+                width="259"
+                alt="Umovement"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">Umovement</figcaption>
+            </figure>
+
+            <figure>
+              <img
+                src="images/UNICEF.png"
+                height="139"
+                width="243"
+                alt="USAID"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">USAID</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/World_Bank.png"
+                height="143"
+                width="259"
+                alt="UNICEF"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">UNICEF</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="images/niche_lib.png"
+                height="143"
+                width="259"
+                alt="Umovement"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">Umovement</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="footer">
+      <div class="moe-footer">
+        <!-- Container 1 -->
+        <div class="container-1">
+          <div class="moe-footer__title">
+            <figure>
+              <img
+                src="logos/logo.png"
+                height="298"
+                width="292"
+                alt="moe-logo"
+                loading="lazy"
+              />
+              <figcaption class="offscreen">moe-logo</figcaption>
+            </figure>
+            <p class="rol">
+              Republic of Liberia <br />
+              Ministry of Education
+            </p>
+          </div>
+          <div class="moe-footer__Office">
+            <h3>OFFICE ADDRESS</h3>
+            <div class="line"></div>
+            <p>
+              MoE Building, Ministerial Complex, <br />
+              Congo Town, Montserrado County <br />
+              Republic of Liberia.
+            </p>
+          </div>
+          <div class="moe-footer__hours">
+            <h3>OFFICE HOURS</h3>
+            <div class="line"></div>
+            <p>
+              Mon-Fri: 9:00 AM - 5:00 PM <br />
+              Saturday & Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <!-- Container 2 -->
+        <div class="container-2">
+          <div class="moe-footer__links">
+            <h3>MAJOR LINKS</h3>
+            <div class="line"></div>
+            <p>
+              <a href="#">The Ministry</a><br />
+              <a href="#"> Programs</a><br />
+              <a href="#"> Scholarships</a><br />
+              <a href="#"> Media/News</a>
+            </p>
+          </div>
+          <div class="moe-footer__nav">
+            <h3>QUICK NAVIGATION</h3>
+            <div class="line"></div>
+            <p>
+              <a href="#">The Minister </a><br />
+              <a href="#">Bids & Vacancies</a><br />
+              <a href="#">National Curriculum</a><br />
+              <a href="#">Press Statement</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Container 3 -->
+        <div class="container-3">
+          <div class="moe-footer__gt">
+            <h3>GET IN TOUCH</h3>
+            <div class="line"></div>
+            <p>
+              <i class="fa-solid fa-envelope"></i
+              ><a href="#">contact@moeliberia.com </a> <br />
+              <i class="fa-solid fa-square-phone"></i>
+              <a href="#">(+231) 235-678 | (+231) 456-786</a> <br />
+              <i class="fa-solid fa-globe"></i>
+              <a href="#">www.moeliberia.com</a>
+            </p>
+          </div>
+          <div class="moe-footer__form">
+            <h3>MESSAGE US</h3>
+            <div class="line"></div>
+            <form action="Message-Us" method="POST" class="message-form">
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter Full Name"
+                id="username"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email Address"
+                id="mail"
+              />
+              <textarea
+                name="message"
+                placeholder="Enter Your Message"
+                id="message"
+                rows="5"
+              ></textarea>
+
+              <a href="#" class="send-message">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </a>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="social_section">
+        <div class="footer-line"></div>
+        <div class="footer-content">
+          <div class="social-icons">
+            <a href="#"> <i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"> <i class="fa-brands fa-square-instagram"></i></a>
+            <a href="#"> <i class="fa-brands fa-square-x-twitter"></i></a>
+          </div>
+          <p class="copyright">© 2025 All Rights Reserved. <a href="https://zw.linkedin.com/in/lennox-galanje">Lennox Galanje</a></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
